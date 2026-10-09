@@ -1,4 +1,7 @@
 <script setup lang="ts">
+useHead({
+  title: "Schedule",
+});
 import { ArrowLeft, CalendarDays } from "@lucide/vue";
 
 const auth = useAuthStore();

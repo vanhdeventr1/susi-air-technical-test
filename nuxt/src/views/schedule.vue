@@ -128,7 +128,6 @@ onMounted(async () => {
 
 <template>
   <main class="schedule-page">
-    <!-- Shared header used on the Home page -->
     <AppHeader />
 
     <div class="schedule-content">
@@ -280,7 +279,6 @@ onMounted(async () => {
       </section>
     </div>
 
-    <!-- Shared bottom navigation used on the Home page -->
     <AppBottomNav />
   </main>
 </template>

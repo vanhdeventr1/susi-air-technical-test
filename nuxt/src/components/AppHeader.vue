@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// Shared top bar, identical to the Home header.
-// Use on Home, Schedule, and the day-detail page (/schedule/[date]).
 const auth = useAuthStore();
 </script>
 
@@ -30,7 +28,6 @@ const auth = useAuthStore();
 </template>
 
 <style scoped lang="scss">
-// Mobile first. Breakpoints: 480 (large phone), 720 (tablet)
 .app-header {
   position: sticky;
   top: 0;
@@ -68,7 +65,7 @@ const auth = useAuthStore();
   }
 
   &__unit {
-    display: none; // too wide for phones
+    display: none;
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.06em;
@@ -91,7 +88,7 @@ const auth = useAuthStore();
     }
 
     small {
-      display: none; // phones: name + avatar only
+      display: none;
       color: rgba(255, 255, 255, 0.75);
       font-size: 12px;
     }

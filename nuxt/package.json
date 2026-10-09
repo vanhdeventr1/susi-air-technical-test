@@ -17,6 +17,7 @@
     "vue": "^3.5.43"
   },
   "devDependencies": {
+    "@types/node": "^26.6.4",
     "sass": "^1.105.1"
   }
 }

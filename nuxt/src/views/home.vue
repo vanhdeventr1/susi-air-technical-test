@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {
-  ArrowRight,
   CalendarDays,
   ChartNoAxesCombined,
   CircleAlert,
@@ -102,7 +101,6 @@ const chart = computed(() => {
     labels,
     line: points.map((point) => `${point.x},${point.y}`).join(" "),
     limitY: yFor(summary.limit),
-    // Mid tick rounded to a multiple of 5.
     grid: [0, Math.round(summary.max / 2 / 5) * 5, summary.max].map(
       (value) => ({
         value,
@@ -181,7 +179,6 @@ onMounted(async () => {
       </div>
 
       <template v-else-if="home.summary && home.documents">
-        <!-- Home dashboard -->
         <template v-if="activeTab === 'home'">
           <section class="section-heading">
             <div>
@@ -237,7 +234,6 @@ onMounted(async () => {
             </article>
           </section>
 
-          <!-- Flight hours chart -->
           <section class="chart-panel" aria-labelledby="chart-title">
             <div class="panel-heading">
               <div>
@@ -352,7 +348,6 @@ onMounted(async () => {
             </div>
           </section>
 
-          <!-- Documents -->
           <section class="documents-panel" aria-labelledby="documents-title">
             <div class="panel-heading panel-heading--compact">
               <div>
@@ -393,7 +388,6 @@ onMounted(async () => {
           </section>
         </template>
 
-        <!-- Schedule -->
         <section v-else-if="activeTab === 'schedule'" class="secondary-panel">
           <p class="eyebrow">MAY 2026</p>
           <h1>Schedule</h1>
@@ -425,7 +419,6 @@ onMounted(async () => {
           </ul>
         </section>
 
-        <!-- Logbook -->
         <section v-else-if="activeTab === 'logbook'" class="secondary-panel">
           <p class="eyebrow">FLIGHT RECORDS</p>
           <h1>Logbook</h1>
@@ -440,7 +433,6 @@ onMounted(async () => {
           </p>
         </section>
 
-        <!-- More / account -->
         <section v-else class="secondary-panel">
           <p class="eyebrow">CREW ACCOUNT</p>
           <h1>More</h1>
@@ -462,22 +454,17 @@ onMounted(async () => {
       </template>
     </div>
 
-    <!-- Shared navigation component -->
     <AppBottomNav />
   </main>
 </template>
 
 <style scoped lang="scss">
-// Mobile first: base styles are for phones (~360px).
-// Breakpoints: 480 (large phone), 720 (tablet), 1024 (desktop).
-
 .home-page {
   min-height: 100dvh;
   padding-bottom: calc(88px + env(safe-area-inset-bottom));
   color: var(--navy);
 }
 
-// ---------- Layout ----------
 .home-content {
   display: grid;
   gap: 16px;
@@ -526,7 +513,6 @@ onMounted(async () => {
   color: var(--text-secondary);
 }
 
-// ---------- Cards ----------
 .limit-card,
 .chart-panel,
 .documents-panel,
@@ -631,7 +617,6 @@ onMounted(async () => {
   font-variant-numeric: tabular-nums;
 }
 
-// ---------- Chart ----------
 .chart-panel,
 .documents-panel {
   padding: 16px 14px;
@@ -646,7 +631,6 @@ onMounted(async () => {
   font-size: 17px;
 }
 
-// Full-width segmented control on phones.
 .range-toggle {
   display: flex;
   width: 100%;
@@ -724,7 +708,6 @@ onMounted(async () => {
   overflow: visible;
 }
 
-// The SVG uses a 640-wide viewBox and scales down on phones.
 .chart-grid line {
   stroke: #e9edf1;
   stroke-width: 1.5;
@@ -790,7 +773,6 @@ onMounted(async () => {
   text-align: center;
 }
 
-// ---------- Documents ----------
 .panel-heading--compact {
   margin-bottom: 8px;
 }
@@ -877,7 +859,6 @@ onMounted(async () => {
   color: var(--danger);
 }
 
-// ---------- Loading / error ----------
 .home-loading,
 .home-error {
   display: flex;
@@ -922,7 +903,6 @@ onMounted(async () => {
   animation: pulse 1s ease-in-out infinite alternate;
 }
 
-// ---------- Secondary tabs ----------
 .secondary-panel {
   min-height: 250px;
   padding: 20px 16px;
@@ -933,7 +913,6 @@ onMounted(async () => {
   font-size: 24px;
 }
 
-// Schedule row on phones.
 .schedule-list li {
   display: grid;
   grid-template-columns: 64px minmax(0, 1fr) auto;
@@ -1043,7 +1022,6 @@ onMounted(async () => {
   }
 }
 
-// ---------- ≥480px: large phones ----------
 @media (min-width: 480px) {
   .home-content {
     padding: 20px 20px 28px;
@@ -1063,7 +1041,6 @@ onMounted(async () => {
   }
 }
 
-// ---------- ≥720px: tablet ----------
 @media (min-width: 720px) {
   .home-page {
     padding-bottom: 104px;
@@ -1126,7 +1103,6 @@ onMounted(async () => {
   }
 }
 
-// ---------- ≥1024px: desktop ----------
 @media (min-width: 1024px) {
   .home-content {
     grid-template-columns: repeat(12, minmax(0, 1fr));

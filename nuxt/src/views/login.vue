@@ -13,7 +13,6 @@ const canSubmit = computed(
     username.value.trim() !== "" && password.value !== "" && !auth.isLoading,
 );
 
-// Live clock (WIB + UTC). Set on mount only, so SSR and client markup match.
 const now = ref<Date | null>(null);
 let timer: ReturnType<typeof setInterval> | undefined;
 
@@ -152,7 +151,7 @@ async function submitLogin() {
           <Phone :size="16" :stroke-width="1.75" aria-hidden="true" />
           <span>
             Can't sign in? Call Flight Ops
-            <strong>+62 811 211 3080</strong>
+            <strong>+62 8101 101 1010</strong>
           </span>
         </a>
       </section>
@@ -166,7 +165,6 @@ async function submitLogin() {
 </template>
 
 <style scoped lang="scss">
-// Uses the CSS variables from assets/scss/main.scss (:root), no SCSS imports needed.
 $radius-card: 16px;
 $radius-field: 12px;
 $radius-pill: 999px;
@@ -200,7 +198,6 @@ $radius-pill: 999px;
   }
 }
 
-// Operations header: logo + title on the left, live clock on the right
 .ops {
   display: flex;
   align-items: center;
@@ -222,7 +219,6 @@ $radius-pill: 999px;
     min-width: 0;
   }
 
-  // White chip so the logo stays readable on navy
   &__logo {
     display: block;
     flex: none;
@@ -351,7 +347,7 @@ $radius-pill: 999px;
     border-radius: $radius-field;
     background: var(--background);
     color: var(--navy);
-    font-size: 16px; // avoids iOS zoom
+    font-size: 16px;
     font-weight: 500;
     outline: 0;
     transition:
@@ -446,7 +442,6 @@ $radius-pill: 999px;
   }
 }
 
-// Centered help line
 .help {
   display: flex;
   align-items: center;
