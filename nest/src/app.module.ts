@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import routerConfig from './cores/configs/router.config';
 import { AuthModule } from './features/auth/auth.module';
 
 @Module({
@@ -11,6 +12,7 @@ import { AuthModule } from './features/auth/auth.module';
       isGlobal: true,
       cache: true,
     }),
+    routerConfig,
     AuthModule,
   ],
   controllers: [AppController],
