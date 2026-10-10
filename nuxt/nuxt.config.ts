@@ -4,12 +4,20 @@ import { fileURLToPath } from 'node:url';
 const projectRoot = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineNuxtConfig({
-  app: {
-    head: {
-      title: 'SUSI AIR',
-      titleTemplate: '%s | SUSI AIR',
-    },
+  
+app: {
+  head: {
+    title: 'SUSI AIR',
+    titleTemplate: '%s | SUSI AIR',
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/susiair-logo.png',
+      },
+    ],
   },
+},
 
   srcDir: 'src/',
 
