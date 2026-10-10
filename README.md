@@ -103,7 +103,7 @@ The summary is calculated by the backend. It returns limit-card values and a 15-
 
 - Replace hardcoded credentials with a user store, password hashing, and short-lived access/refresh tokens.
 - Add automated API tests for authentication, date validation, rolling windows, document urgency, and schedule month changes.
-- Build full Logbook, Schedule detail, and More screens; those navigation destinations are currently lightweight placeholders.
+- Build full Logbook, Schedule detail, and More screens those navigation destinations are currently lightweight placeholders.
 - Make the review date and default schedule month configurable for different test datasets.
 - Notifications for schedule changes and document expiry.
   -Add data export functionality for reports.
